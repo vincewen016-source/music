@@ -116,7 +116,7 @@
       而且可以背景播放下一首。
     </p>
 
-    <div class="brand">CBW NFC 音樂吊飾｜Chiayi Edition</div>
+    <div class="brand">CBW NFC 音樂吊飾｜FIRST Edition</div>
   </main>
 
 <script>
@@ -141,13 +141,13 @@
     window.location.href = url;
   };
 
-  // 3. 開啟華語 / 台灣熱門百大（顯示歌單，不強制播放）
+  // 3. 開啟流行音樂電台 ● 熱門歌曲（顯示歌單，不強制播放）
   document.getElementById('open-chinese').onclick = () => {
     const url = `https://music.youtube.com/playlist?list=${CHINESE_PLAYLIST}`;
     window.location.href = url;
   };
 
-  // 4. 自動播放華語 / 台灣熱門百大（隨機播放）
+  // 4. 自動播放流行音樂電台 ● 熱門歌曲（隨機播放）
   document.getElementById('play-chinese').onclick = () => {
     const url = `https://music.youtube.com/watch?list=${CHINESE_PLAYLIST}&shuffle=1`;
     window.location.href = url;
