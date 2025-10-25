@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>隨機音樂啟動面板 🎵</title>
+<style>
+  :root {
+    --bg:#0f172a;
+    --card:#1e2537;
+    --text:#fff;
+    --muted:#94a3b8;
+    --accent:#22d3ee;
+  }
+  body {
+    background: radial-gradient(circle at 20% 20%, #1f2937 0%, #0f172a 60%);
+    min-height:100vh;
+    margin:0;
+    color:var(--text);
+    font-family: system-ui,-apple-system,"Noto Sans TC","PingFang TC",sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    text-align:center;
+  }
+  .wrap {
+    max-width:360px;
+    width:100%;
+    background:var(--card);
+    border-radius:20px;
+    box-shadow:0 30px 80px rgba(0,0,0,.6);
+    padding:24px 20px 28px;
+    border:1px solid rgba(255,255,255,.07);
+  }
+  h1 {
+    font-size:20px;
+    line-height:1.4;
+    margin:0 0 8px;
+  }
+  .sub {
+    font-size:13px;
+    line-height:1.5;
+    color:var(--muted);
+    margin:0 0 20px;
+  }
+  .btn-group {
+    display:grid;
+    gap:12px;
+    margin-bottom:24px;
+  }
+  button.btn {
+    appearance:none;
+    border:0;
+    width:100%;
+    border-radius:14px;
+    padding:14px 16px;
+    font-size:16px;
+    font-weight:600;
+    line-height:1.3;
+    color:#0f172a;
+    background:var(--accent);
+    box-shadow:0 10px 24px rgba(34,211,238,.4);
+    cursor:pointer;
+  }
+  button.btn.secondary {
+    background:#2d354a;
+    color:#fff;
+    box-shadow:0 10px 24px rgba(0,0,0,.6);
+    border:1px solid rgba(255,255,255,.07);
+  }
+  .hint {
+    font-size:12px;
+    line-height:1.4;
+    color:var(--muted);
+  }
+  .brand {
+    font-size:12px;
+    color:var(--muted);
+    margin-top:16px;
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>嘉義 NFC 音樂面板</h1>
+    <p class="sub">
+      點一下按鈕開始播放。<br>
+      手機會把這個點擊當成「你允許播放聲音」，所以可以開始播歌 🎶
+    </p>
+
+    <section class="btn-group">
+      <!-- A. 全球百大：僅打開清單 -->
+      <button class="btn secondary" id="open-global">
+        🌍 開啟全球百大歌單
+      </button>
+
+      <!-- B. 全球百大：隨機播放 -->
+      <button class="btn" id="play-global">
+        🔀 自動播放全球百大 (隨機)
+      </button>
+
+      <!-- C. 華語/台灣熱門：僅打開清單 -->
+      <button class="btn secondary" id="open-chinese">
+        🇹🇼 開啟華語／台灣熱門百大
+      </button>
+
+      <!-- D. 華語/台灣熱門：隨機播放 -->
+      <button class="btn" id="play-chinese">
+        🎧 自動播放華語百大 (隨機)
+      </button>
+    </section>
+
+    <p class="hint">
+      建議在 YouTube Music App 中開啟，這樣通常可以直接播放，<br>
+      而且可以背景播放下一首。
+    </p>
+
+    <div class="brand">台灣 NFC 故事吊飾｜Chiayi Edition</div>
+  </main>
+
+<script>
+  // ====== 這邊是歌單 ID。如果 YouTube 之後換 ID，你只改這裡就好 ======
+  // 全球熱門 Top 100 (YouTube Music 官方榜單)
+  const GLOBAL_PLAYLIST = "PLFgquLnL59alCl_2TQvOiD5Vgm1hCaGSI";
+
+  // 台灣熱門 Top 100 / 主要華語熱歌榜
+  const CHINESE_PLAYLIST = "PLFgquLnL59akD07uf77HT2CZYgqYdTn7T";
+
+  // ====== 四個按鈕的行為 ======
+
+  // 1. 開啟全球百大（顯示歌單，不強制播放）
+  document.getElementById('open-global').onclick = () => {
+    const url = `https://music.youtube.com/playlist?list=${GLOBAL_PLAYLIST}`;
+    window.location.href = url;
+  };
+
+  // 2. 自動播放全球百大（隨機播放模式）
+  document.getElementById('play-global').onclick = () => {
+    const url = `https://music.youtube.com/watch?list=${GLOBAL_PLAYLIST}&shuffle=1`;
+    window.location.href = url;
+  };
+
+  // 3. 開啟華語 / 台灣熱門百大（顯示歌單，不強制播放）
+  document.getElementById('open-chinese').onclick = () => {
+    const url = `https://music.youtube.com/playlist?list=${CHINESE_PLAYLIST}`;
+    window.location.href = url;
+  };
+
+  // 4. 自動播放華語 / 台灣熱門百大（隨機播放）
+  document.getElementById('play-chinese').onclick = () => {
+    const url = `https://music.youtube.com/watch?list=${CHINESE_PLAYLIST}&shuffle=1`;
+    window.location.href = url;
+  };
+</script>
+</body>
+</html>
