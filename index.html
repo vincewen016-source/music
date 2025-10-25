@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<title>隨機音樂啟動面板 🎵</title>
+<title>音樂啟動面板 🎵</title>
 <style>
   :root {
     --bg:#0f172a;
@@ -83,7 +83,7 @@
 </head>
 <body>
   <main class="wrap">
-    <h1>嘉義 NFC 音樂面板</h1>
+    <h1> NFC 音樂面板</h1>
     <p class="sub">
       點一下按鈕開始播放。<br>
       手機會把這個點擊當成「你允許播放聲音」，所以可以開始播歌 🎶
@@ -100,14 +100,14 @@
         🔀 自動播放全球百大 (隨機)
       </button>
 
-      <!-- C. 華語/台灣熱門：僅打開清單 -->
+      <!-- C. 流行音樂電台 ● 熱門歌曲：僅打開清單 -->
       <button class="btn secondary" id="open-chinese">
-        🇹🇼 開啟華語／台灣熱門百大
+        🇹🇼 流行音樂電台 ● 熱門歌曲
       </button>
 
-      <!-- D. 華語/台灣熱門：隨機播放 -->
+      <!-- D. 流行音樂電台 ● 熱門歌曲：隨機播放 -->
       <button class="btn" id="play-chinese">
-        🎧 自動播放華語百大 (隨機)
+        🎧 自動播放流行音樂電台 ● 熱門歌曲
       </button>
     </section>
 
@@ -116,16 +116,16 @@
       而且可以背景播放下一首。
     </p>
 
-    <div class="brand">台灣 NFC 故事吊飾｜Chiayi Edition</div>
+    <div class="brand">CBW NFC 音樂吊飾｜Chiayi Edition</div>
   </main>
 
 <script>
   // ====== 這邊是歌單 ID。如果 YouTube 之後換 ID，你只改這裡就好 ======
   // 全球熱門 Top 100 (YouTube Music 官方榜單)
-  const GLOBAL_PLAYLIST = "PLFgquLnL59alCl_2TQvOiD5Vgm1hCaGSI";
+  const GLOBAL_PLAYLIST = "PL4fGSI1pDJn6puJdseH2Rt9sMvt9E2M4i";
 
-  // 台灣熱門 Top 100 / 主要華語熱歌榜
-  const CHINESE_PLAYLIST = "PLFgquLnL59akD07uf77HT2CZYgqYdTn7T";
+  // 流行音樂電台 ● 熱門歌曲 
+  const CHINESE_PLAYLIST = "RDATg9XpY";
 
   // ====== 四個按鈕的行為 ======
 
